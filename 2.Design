@@ -1,0 +1,80 @@
+Autonomous System for Detecting Drainage Blockages in Urban Areas
+High-Level Design
+The high-level design of the autonomous drainage blockage detection system focuses on the integration of various components to achieve real-time detection, mapping, and navigation within urban drainage systems. The design follows a modular approach for easy scalability and adaptability to different urban environments.
+
+Major Components:
+Autonomous Robot:
+
+Navigation and movement through drainage systems.
+Equipped with DC motors, stepper motors, and L293D motor driver.
+Sensors (ultrasonic, infrared, high-definition cameras) for blockage detection.
+Main Control Unit (Raspberry Pi):
+
+Central processing unit for sensor data integration and control.
+Coordinates communication between sensors, motors, and operator interface.
+Sensors and Communication:
+
+Ultrasonic & Infrared Sensors: Detect blockages and check pipe conditions.
+High-Definition Camera: Provides real-time video feeds of the system for visual inspection.
+GPS and IMUs: Assist with accurate navigation in complex drainage layouts.
+Bluetooth Module: Enables operator communication with the robot.
+Software and AI System:
+
+Uses Computer Vision for image processing.
+Neural Networks for blockage detection.
+Integration of IoT for real-time monitoring and updates.
+Workflow:
+The robot is deployed in a drainage system, where sensors detect potential blockages.
+The system processes sensor data and uses machine learning to identify and classify blockages.
+The robot sends real-time updates to the operator via Bluetooth communication.
+The system generates a map of the drainage network, marking areas with detected blockages.
+Low-Level Design
+The low-level design provides detailed specifications for the individual components, including their functions, data flow, and interconnections.
+
+1. Navigation and Motors:
+DC Motors for forward, backward, and rotation movement.
+Stepper Motors for precise positioning within narrow sections of the drainage system.
+Controlled by the L293D Motor Shield connected to the Raspberry Pi.
+2. Sensor Details:
+Ultrasonic Sensors (HC-SR04): Measure distance to detect obstacles.
+Infrared Sensors: Monitor surroundings for blockage indications.
+High-Definition Camera (Raspberry Pi Camera Module): Streams real-time footage for visual detection of blockages.
+3. Control and Communication System:
+Raspberry Pi acts as the main processing unit, controlling sensors, motors, and communication systems.
+Bluetooth Module (HC-05): Allows communication with the operator.
+GPS and IMUs: Provide positional data for the robot's movement within the drainage system.
+4. Software Algorithms:
+Computer Vision: Image processing techniques to identify blockages from camera footage.
+Neural Network Algorithms: Classify blockage types and make navigation decisions.
+Data Flow: Sensor data (ultrasonic, infrared) is sent to the Raspberry Pi, processed, and analyzed to detect blockages.
+5. Power Management:
+Battery Pack: Provides power to the Raspberry Pi, sensors, and motors.
+Power Distribution Board: Ensures power stability and distribution across the components.
+Non-Functional Requirements
+Non-functional requirements outline the qualities the system must exhibit in terms of performance, reliability, and user experience.
+
+1. Performance:
+The system should be able to detect and map blockages in real-time with a latency of under 2 seconds.
+The robot should be able to cover a drainage section of up to 50 meters per session.
+It should provide updates to the operator every 5 seconds during operation.
+2. Scalability:
+The system design should allow for easy integration of additional sensors or cameras as needed.
+The software should be modular to allow updates to detection algorithms or new sensors without overhauling the entire system.
+3. Reliability:
+The robot must be capable of operating for a minimum of 8 hours on a single charge.
+The system must have built-in fail-safes for navigation in case of sensor failure (e.g., fallback mode, stop and alert operator).
+4. Security:
+Communication between the robot and the operator should be secured using encryption.
+The software should have user authentication to prevent unauthorized access.
+5. Usability:
+The operator interface (via Bluetooth) should be intuitive, with clear controls for navigation and sensor data visualization.
+The system should provide real-time visual feedback on detected blockages via the camera.
+6. Cost-Efficiency:
+The system should use affordable components such as Raspberry Pi and Arduino to keep the cost of implementation low.
+The design should focus on maximizing performance while minimizing component costs.
+7. Maintainability:
+The system should be designed for easy maintenance, with clearly documented software and hardware components.
+The robot should be easy to disassemble and repair in case of hardware failure.
+8. Environmental Considerations:
+The system should be designed to operate in humid and wet environments without performance degradation.
+The components should be water-resistant and have proper sealing to prevent damage during operation.
