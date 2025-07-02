@@ -1,0 +1,87 @@
+# Requirements for Autonomous System for Detecting Drainage Blockages in Urban Areas
+
+## High-Level Requirements  
+
+1. **Autonomous Navigation:**  
+   - The robot must autonomously navigate urban drainage systems to detect and map blockages.
+   
+2. **Blockage Detection:**
+   - The robot must detect blockages using sensors such as ultrasonic, infrared, and cameras.
+
+3. **Real-time Data Processing:**
+   - The system should process sensor data in real-time for blockage identification and location mapping.
+
+4. **Mapping Capabilities:**
+   - The robot must generate an accurate map of the drainage system’s condition, including blockage locations.
+
+5. **Communication:**
+   - The robot should communicate wirelessly with an operator via Bluetooth for status updates and control.
+
+6. **Modular and Scalable Design:**
+   - The system should be scalable and adaptable to different drainage infrastructures, using affordable, widely available components.
+
+7. **Safety:**
+   - The robot must be designed to ensure minimal risk to personnel and the environment during operation.
+
+---
+
+## Low-Level Requirements
+
+1. **Hardware Components:**
+   - **Raspberry Pi:** Serves as the central control unit.
+   - **Ultrasonic Sensors:** For distance measurements to detect blockages.
+   - **Infrared Sensors:** To check the condition of pipes.
+   - **Cameras (HD):** For visual inspection and blockage verification.
+   - **GPS Module:** For navigation and location tracking.
+   - **Inertial Measurement Unit (IMU):** For precise movement tracking in tight spaces.
+   - **DC Motors & Stepper Motors:** For robot movement.
+   - **L293D Motor Driver:** For controlling the motors.
+   - **Bluetooth Module:** For communication between the robot and operator.
+
+2. **Software Requirements:**
+   - **Raspberry Pi OS:** For running the control software and integrating the sensors.
+   - **Python Programming Language:** For sensor data processing and robot control.
+   - **OpenCV/Computer Vision Libraries:** For visual inspection and blockage detection.
+   - **Machine Learning Libraries:** (e.g., TensorFlow or PyTorch) for neural network-based detection of blockages.
+
+3. **Power Requirements:**
+   - **Battery:** To power the robot and all its sensors and communication modules.
+   - **Charging Circuit:** For recharging the robot after use.
+
+4. **System Integration:**
+   - Integration of sensors, communication modules, and motors into a cohesive system.
+   - Software integration for sensor data processing, navigation, and task automation.
+
+---
+
+## Non-Functional Requirements
+
+1. **Performance:**
+   - The robot should detect and map blockages with at least 95% accuracy.
+   - It should reduce inspection time by at least 40% compared to traditional manual methods.
+
+2. **Scalability:**
+   - The system should be adaptable to different drainage systems in urban areas, allowing for future upgrades to handle new sensor types or communication methods.
+
+3. **Reliability:**
+   - The robot must be able to operate continuously for at least 4 hours on a single charge without significant performance degradation.
+   - The system must handle sensor data processing and movement without failure in typical environmental conditions.
+
+4. **Maintainability:**
+   - The system should have easily replaceable components, such as sensors and motors, to ensure long-term usability.
+   - The software should be modular, allowing for future upgrades or changes without requiring a complete redesign.
+
+5. **Security:**
+   - Communication between the robot and operator should be encrypted to prevent unauthorized access.
+   - The system should have secure access control for its software and hardware interfaces.
+
+6. **Usability:**
+   - The robot should have a user-friendly interface for operators to control and monitor its operations via Bluetooth.
+   - The software should display relevant real-time data such as location, detected blockages, and system status.
+
+7. **Safety:**
+   - The robot should have built-in safety features, such as automatic shutdown in case of system failure, to prevent damage or accidents.
+
+8. **Energy Efficiency:**
+   - The system should operate efficiently, with minimal energy consumption for extended operation on a single battery charge.
+
